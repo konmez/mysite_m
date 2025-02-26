@@ -60,8 +60,9 @@ mysite_m/
 ├── mysite/               # Project settings
 │   
 └── staticfiles/          # Collected static files
-
+```
 # Or detailed:
+```
 mysite_m/
 ├── account/              # User account management
 │   ├── _pycache_/        # Python bytecode cache
