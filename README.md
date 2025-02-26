@@ -32,6 +32,35 @@ The application is deployed on Render: [https://mysite-m.onrender.com](https://m
 
 
 ## Project Structure
+
+# Short:
+
+mysite_m/
+├── account/              # User account management
+│   ├── _pycache_/        # Python bytecode cache
+│   ├── migrations/       # Database migrations
+│   ├── static/           # Static files for account
+│   ├── templates/        # HTML templates
+│   │   ├── account/      # Account-specific templates
+│   │   └── registration/ # Registration templates
+│   │  
+├── blog/                 # Main blog application
+│   ├── _pycache_/        # Python bytecode cache
+│   ├── migrations/       # Database migrations
+│   ├── static/blog_static # Static files (CSS, images)
+│   │   ├── css/          # Stylesheets
+│   │   └── images/       # Images
+│   ├── templates/        # HTML templates
+│   │   └── blog/         # Blog-specific templates
+│   │       └── comment/  # Comment templates
+│   │ 
+│   └── templatetags/     # Custom template tags
+│   
+├── mysite/               # Project settings
+│   
+└── staticfiles/          # Collected static files
+
+# Or detailed:
 mysite_m/
 ├── account/              # User account management
 │   ├── _pycache_/        # Python bytecode cache
