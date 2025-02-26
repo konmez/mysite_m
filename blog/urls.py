@@ -27,8 +27,8 @@ urlpatterns = [
     # ),  
 
    
-       
-    path('home.html', views.home_page, name='home_page'),
+    path('', views.home_page, name='home_page'),   
+    #path('home.html', views.home_page, name='home_page'),
 
     #path('post/home.html', views.home_page, name='home_page'),
 
