@@ -35,6 +35,7 @@ The application is deployed on Render: [https://mysite-m.onrender.com](https://m
 
 # Short:
 
+```
 mysite_m/
 ├── account/              # User account management
 │   ├── _pycache_/        # Python bytecode cache
@@ -119,6 +120,9 @@ mysite_m/
 ├── mysite_data.json      # Data export/backup
 ├── README.md             # Project documentation
 └── requirements.txt      # Python dependencies
+```
+
+
 
 ## Installation
 
