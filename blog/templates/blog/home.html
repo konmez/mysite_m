@@ -1,0 +1,131 @@
+{% extends "blog/base.html" %}
+
+{% load blog_tags %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+
+      
+<section id="hero">
+    <div id="cover-text">
+      <h2>Lifehack Indeed </h2>
+      <h3>Let's review some popular advices</h3>
+    </div>
+   </section> 
+     
+   <section id="reasons" >
+     <h2><i class="fa-solid fa-circle-question"></i> What really is a life hack?</h2>
+         
+     <h3>
+             A life hack (or life hacking) is any trick, shortcut, skill, or novelty method 
+             that increases productivity and efficiency, in all walks of life (Wikipedia). 
+             <i class="fa-solid fa-chalkboard-user"></i>
+     </h3>
+
+              
+
+     <div id="benefits"  >          
+
+       <div id="benefits-yes">
+
+         <div >
+          <h3>1.Can it work at all? <i class="fa-solid fa-square-check"></i></h3>
+            <hr class="hr-line">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla lacus eros,
+               ut rhoncus libero viverra sed. Phasellus ultricies gravida augue, ultriciesper aliquam.
+           </p>
+         </div>
+
+         <div>
+           <h3>2.Is result guaranteed?  <i class="fa-solid fa-thumbs-up"></i></h3>
+           <hr class="hr-line">
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla lacus eros,
+              ut rhoncus libero viverra sed. Phasellus ultricies gravida augue, ultriciesper aliquam.
+           </p>
+         </div>
+
+       </div>
+
+     
+       <div id="benefits-no">
+
+         <div>
+           <h3>3.Any risks? <i class="fa-solid fa-triangle-exclamation"></i></h3>
+           <hr class="hr-line">
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla lacus eros,
+             ut rhoncus libero viverra sed. Phasellus ultricies gravida augue, ultriciesper aliquam.</p>
+         </div>
+
+         <div>    
+             <h3>4.Any possible danger? <i class="fa-solid fa-bolt"></i></h3>
+             <hr class="hr-line">
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla lacus eros,
+               ut rhoncus libero viverra sed. Phasellus ultricies gravida augue, ultriciesper aliquam.
+             </p>
+         </div>
+
+       </div>  
+       
+       <div id="benefits-image">
+         <div id="circle-cover-bg">                     
+         </div>
+       </div>  
+
+     </div>
+   </section>
+
+  
+
+    <!-- categories section-->
+   <section id="categories">
+    <h2>Here is collection of some popular  lifehacks from the internet</h2>
+    <h3>
+      Think critically, Work carefully, and please share your opinion with us!
+    </h3>
+
+    <div>
+      <!-- 4 column row -->
+      <div class="row click-it ">
+       
+                 <div class="categories-col "  style="text-decoration: none;" >   
+                   <a href="{% url 'blog:post_list_by_tag' 'diy'  %}">                 
+                         <div id="diy" class="unit-box">
+                               <h2> diy </h2>                
+                         </div>   
+                   </a>                     
+                 </div>
+      
+        <div class="categories-col"  >
+             <a href="{% url 'blog:post_list_by_tag' 'kitchen'  %}" >
+                   <div id="kitchen" class="unit-box">
+                       <h2>kitchen</h2>
+                   </div>
+             </a>
+        </div>
+       
+         <div class="categories-col" >
+         <a href="{% url 'blog:post_list_by_tag' 'household'  %}" >
+           <div id="household" class="unit-box">
+                 <h2> household</h2>
+           </div>
+         </a>
+        </div>
+
+        <div class="categories-col" >
+         <a href="{% url 'blog:post_list_by_tag' 'other'  %}" >
+           <div id="other" class="unit-box">
+              <h2>other</h2>
+         </div>
+       </a>
+        </div>
+      </div>
+      
+    </div>
+    </section>
+
+
+
+
+  
+{% endblock %}

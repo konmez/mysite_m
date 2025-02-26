@@ -8,7 +8,10 @@ app_name = 'blog'
 
 urlpatterns = [
     # post views
-    path('', views.post_list, name='post_list'),
+
+    # path('post/list.html', views.post_list, name='post_list'),
+
+    # path('', views.post_list, name='post_list'),
     #path('', views.PostListView.as_view(), name='post_list'),
 
     #path('<int:id>/', views.post_detail, name='post_detail'),
@@ -25,7 +28,9 @@ urlpatterns = [
 
    
        
-    path('post/home.html', views.home_page, name='home_page'),
+    path('home.html', views.home_page, name='home_page'),
+
+    #path('post/home.html', views.home_page, name='home_page'),
 
     path(
         'tag/<slug:tag_slug>/', views.post_list, name='post_list_by_tag'
