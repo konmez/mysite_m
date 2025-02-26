@@ -1,0 +1,200 @@
+
+{% load blog_tags %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- meta tags for search engines-->
+   <meta name="description"  content="hacks, lifehacks" >
+   <meta name="keywords" content="hacks, lifehacks, DIY, kitchen, household">
+
+  <title>Lifehack Indeed</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{% static 'blog_static/images/favicon_io/favicon.ico' %}">
+ 
+   <link rel="apple-touch-icon" sizes="100x100" href="{% static 'blog_static/images/favicon_io/apple-touch-icon.png' %}" >
+   <link rel="icon" sizes="32x32" href="{% static 'blog_static/images/favicon_io/favicon-32x32.png' %}"  >
+   <link rel="icon" sizes="16x16" href="{% static 'blog_static/images/favicon_io/favicon-16x16.png' %}" >
+
+   
+    <!-- Stylesheet -->   
+   <link rel="stylesheet" href="{% static 'blog_static/css/style.css' %}" >    
+   <link rel="stylesheet" href="{% static 'account_static/css/base.css' %}" >    
+   
+
+</head>
+<body>
+   <!-- Based on the design by Code Institute, "Love Running", 2024 -->
+  <!--  Header-->
+
+<header >
+  <a href="index.html">
+    <h1 id="logo">Lifehack Indeed</h1>
+  </a>
+  <input type="checkbox" id="nav-toggled" name="nav-toggled">
+  <label for="nav-toggled" class="nav-toggled-label"><i class="fa-solid fa-bars"></i></label>
+  <nav>
+
+    <ul id="menu" >
+      <li> <a href="{% url 'blog:home_page'  %}" class="active">Home</a> </li>
+      <li>
+        
+        <label for="cat-toggled" class="cat-toggled-label">Category</label>
+        <input type="checkbox" id="cat-toggled" name="cat-toggled" >
+          <ul id="cat-menu">
+            <li><a href="{% url 'blog:post_list_by_tag' 'diy'  %}" >DIY</a></li>
+            <li><a href="{% url 'blog:post_list_by_tag' 'kitchen'  %}"  >Kitchen</a></li>
+            <li><a href="{% url 'blog:post_list_by_tag' 'household'  %}"  >Household</a></li>
+            <li><a href="{% url 'blog:post_list_by_tag' 'other'  %}"  >Other</a></li>         
+
+          </ul>
+
+      </li>
+      <li><a href="{% url 'blog:contact_us'  %}">Contact</a></li>
+    </ul>
+
+  </nav>
+
+ 
+
+ 
+</header>   
+
+
+    <!-- main content-->
+     <main>
+
+     
+      <div> 
+        {% include "blog/post/includes/dashboard_header.html" %} 
+      </div>     
+      
+      
+       <div style="display: flex; justify-content: center;">
+            <!-- <div class="construction"> -->
+              
+
+
+            <!-- content comes here: -->
+            <div class="content"     >
+
+                {% block content %}
+                {% endblock %}
+                <div>
+
+                  {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li class="{{ message.tags }}">
+                                {{ message|safe }}
+                                <a href="#" class="close">x</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                  {% endif %}
+                  
+             </div> 
+               
+
+            </div>    
+             
+
+             
+                <!--         sidebar -->
+            <div id="sidebar">
+                <h2>My blog</h2>
+                <p>This is my blog.
+                  I've written {% total_posts %} posts so far.
+            
+                </p>
+            
+                <p>
+                  <a href="{% url 'blog:post_feed' %}">
+                    Subscribe to my RSS feed
+                  </a>
+                </p>
+            
+                <h3>Latest posts</h3>
+
+                <div style="padding: 10px; ">
+                   {% show_latest_posts 3 %}
+                </div>
+
+                <h3>Most commented posts</h3>
+                {% get_most_commented_posts as most_commented_posts %}
+                <div  style="padding: 10px; ">
+                  <div  >
+                    <ul >
+                      {% for post in most_commented_posts %}
+                          <li>
+                          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                          </li>
+                      {% endfor %}    
+                    </ul> 
+                  </div>  
+                 </div>
+                  <!-- for  -->
+                
+            </div>
+ 
+         <!-- end side bar -->
+
+      </div>
+
+
+        <div class="content">            
+          {% block account_content %}
+          {% endblock %}
+        </div>
+
+
+
+      
+
+    </main>
+
+
+    <footer> 
+        <ul  id="social-networks">
+
+        <li> <a href="https://www.facebook.com/" target="_blank" rel="noopener"  
+          aria-label="Visit our Facebook page (opens in a new tab)">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a> 
+        </li>
+        
+        <li><a href="https://x.com/?lang=en" target="_blank" rel="noopener"  
+          aria-label="Visit our twitter page (opens in a new tab)">
+          <i class="fa-brands fa-square-x-twitter"></i>
+        </a> 
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener"  
+          aria-label="Visit our youtube page (opens in a new tab)">
+          <i class="fa-brands fa-square-youtube"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener"  
+          aria-label="Visit our instagram page (opens in a new tab)">
+          <i class="fa-brands fa-square-instagram"></i>
+          </a>
+        </li>
+      </ul>
+
+
+
+    </footer>
+      <!-- fontawesome kit -->
+      <script src="https://kit.fontawesome.com/74c90bdddd.js" crossorigin="anonymous"></script>
+</body>
+</html>

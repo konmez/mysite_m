@@ -1,0 +1,681 @@
+/*  <!-- Based on the design by Code Institute, "Love Running", 2024 --> */
+
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Generic project styles */
+    color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+    
+ 
+} 
+
+.hidden-heading{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 0 1rem;
+    position: fixed; 
+    z-index: 99; 
+    width: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;   
+    
+    
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin-bottom: 1em;
+}
+
+#menu a:hover{
+    border-bottom: 1px solid #3a3a3a;
+    background-color: rgba(60, 60, 60,0.2);
+}  
+
+#cat-menu > li {
+    margin-bottom: 1em;
+}
+
+#cat-menu {font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* nav bar styles with toggle on/off */
+nav{
+position: absolute;
+background-color: #ffffff;
+width: 100%;
+box-shadow: 0 2px 2px #3a3a3a;
+padding: 0 1rem;
+left: 0%;
+display: none;
+top: 100%;
+}
+
+/* nav toggle */
+#nav-toggled:checked~nav{
+  display: block;
+}
+
+#nav-toggled{
+    display: none;
+}
+
+.nav-toggled-label{
+    font-size: 2rem;
+}
+
+/* cat toggle */
+#cat-toggled:checked~#cat-menu {
+    display: block;
+  }
+ #cat-toggled{
+    display: none;
+ }
+  
+  #cat-menu{
+      display: none;
+      }
+  
+  /* end of header section*/
+
+
+/* Main content */
+main {
+    background-color:  rgba(60, 60, 60,0.2);
+    /* Make main element take up any surplus space to push footer down */
+    flex: 1 0 auto;    
+    margin-top: 50px;    
+    /* Enable flex properties for the child elements */
+    display: flex;
+    flex-direction: column;
+   
+}
+
+/* hero section */
+
+/* Hero image */
+#cover-text {
+    width: 300px;
+    right: 50px;
+}
+  
+
+#hero {
+    height: 600px;
+    width: 100%;
+    background: url(../images/StartBG.jpg) no-repeat center  center/cover;    
+    position: relative;
+}
+
+#cover-text{
+  background-color:  rgba(60, 60, 60,0.6);
+  font-size: 130%;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 80%;
+  min-height: 200px;
+  padding-left: 10px;
+  padding-top: 40px;
+}
+ 
+#cover-text h1, h2, h3, h4, h5{
+ color: #ffffff;
+}
+/* reasons section */
+#reasons, #categories{
+    margin: 20px auto;
+    width: 90%;
+}    
+
+#reasons h2 {
+    font-size: 280%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#reasons div{
+    padding: 0.5rem 0;
+}
+
+.hr-line{
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+
+#benefits-no > div , #benefits-yes > div {
+    line-height: 20px;   
+    margin-bottom: 20px;
+}
+
+#benefits-no p , #benefits-yes p{
+    padding: 0 20px;
+    }
+
+#circle-cover-bg {
+    height: 90vh;
+    width: 90vh;
+    margin: 20px 20px;
+    background: url(../images/kitten_smaller.jpg) no-repeat center  center/cover;    
+    border-radius: 20%;
+    max-width: 350px;
+    max-height: 350px;
+   }
+
+#benefits-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+  
+
+#benefits-yes, 
+#benefits-no {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+
+/* DIY page */
+
+.unit-box p{
+    font-size: 150%;
+}    
+
+.unit-box-diy img{    
+    height: 99%;
+    
+    
+    /* align-self: flex-start; */
+    
+}
+
+
+.unit-box-diy{       
+    height: 100%;
+    width: 100%;        
+    display: flex;    
+    justify-content: center;   
+
+    /* border: 3px solid red; */
+ }
+
+ .unit-box-diy div{   
+    text-align: center;
+    align-self: center;
+    flex-grow: 2;
+ }
+
+ .example , .example-review{
+    width: 100%;    
+    padding: 5px;    
+    min-height:150px;   
+    max-height: 200px;
+
+
+    /* border: 2px solid green; */
+    
+    }
+
+
+
+
+/* Sign up form*/
+#signup-form h2{
+  color: #fafafa;
+  margin: 30px 30px 20px 30px; 
+}
+
+#signup-form{
+    background-color: rgba(60, 60, 60,0.6);
+    color: #ffffff;
+    padding: 30px;  
+    display: flex;
+    flex-direction: column;
+      
+}
+
+#signup{         
+    background: url(../images/write.jpg) ;  
+    background-size: cover;
+    background-position: 75%;  
+    flex-grow: 1;  
+    padding: 20px 10% 0 10%;
+    height: 100%;
+   
+}
+
+
+.text-input {
+    color: #454b1b;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+    width: 100%;   
+    padding: 0 5px;
+    height: 25px;
+    margin: 5px 0 20px 0;
+
+    font-family: 'Oswald', sans-serif;   
+    letter-spacing: 2px;
+    color: #252525;
+}
+
+.msg-input{
+    color: #454b1b;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+    width: 100%;   
+    padding: 0 5px;    
+    margin: 5px 0 20px 0;
+    
+
+    font-family: 'Oswald', sans-serif;   
+    letter-spacing: 2px;
+    color: #252525;
+}
+
+.join-button{
+  background-color: #454b1b;
+  color: #fafafa;
+  font-size: 100%;
+  padding: 15px 32px;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+/* category buttons */
+#diy{     
+     background: url(../images/diy_sam-clarke_unsplash_smaller.jpg) no-repeat center  center/cover;  
+       
+    }
+#kitchen{
+    background: url(../images/kitchen_viswaprem-anbarasapandian_unsplash\ _smaller.jpg) no-repeat center  center/cover;
+
+}    
+#household{
+    background: url(../images/household_emmanuel-ikwuegbu-FXpJW_wdMdk-unsplash\ -_smaller.jpg) no-repeat center  center/cover;   
+}
+#other{
+    background: url(../images/other_samantha-gades-LA6XfeVI5_c-unsplash_smaller.jpg) no-repeat center  center/cover;  
+}
+
+
+
+.unit-box{       
+        height: 100%;
+        width: 100%;        
+        display: flex;
+        text-align: center;
+        justify-content: center;         
+     }
+     
+.unit-box h2{
+         align-self: center;  
+     }
+     
+
+.row{
+    display: flex;  
+    flex-wrap: wrap;    
+}
+
+.categories-col, .example, .example-review{
+    width: 100%;    
+    /* float: left; */
+    padding: 5px;    
+    min-height:150px;    
+    max-height: 200px;
+    
+    }
+
+
+.click-it :hover{
+    background-color:  rgba(60, 60, 60,0.4);
+}
+
+    .construction {
+        height: 90vh;
+        width: 90vh;
+        margin: 20px 20px;
+        background: url(../images/under-construction-2891888_1920.jpg) no-repeat center center/cover;    
+        border-radius: 5%;
+        max-width: 350px;
+        max-height: 350px;
+        
+       }
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+}
+
+#social-networks {
+display: flex;
+text-align: center;
+justify-content: space-evenly;
+padding: 20px 5px;
+list-style-type: none;
+}
+
+#social-networks i {
+     font-size: 160%;
+     padding: 5%;
+     color:  #3a3a3a;
+}
+/* end of footer */
+
+/*  Media query: large or landscape phones (>=576px)*/
+@media screen and (min-width:576px){
+      
+
+}
+
+/* Media query: tablet and larger(>=768px) */
+@media screen and (min-width:768px){
+    /* Header */
+    
+nav{
+    display: block;
+    position: relative;
+    width: fit-content;
+    box-shadow: none;
+    padding-bottom: 1rem;
+}
+
+#menu{
+    display: flex;
+}
+
+#menu>li{
+    padding-left: 1rem;
+}
+
+.nav-toggled-label{
+    display: none;
+}
+
+#logo{
+    font-size: 200%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+}
+
+/* main content */
+main{
+     /* Push main content down to accommodate larger header */
+    margin-top: 79px;
+    padding-top: 0.8rem;
+}
+
+
+
+
+/* Hero image */
+#cover-text {
+    width: 300px;
+    right: 50px;
+}
+  
+/* reasons section */
+#benefits-yes, 
+#benefits-no{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#benefits-yes > div, 
+#benefits-no > div {
+   width: 75%;  
+}
+
+#benefits-no>div{
+    text-align: end;
+    align-self: flex-end;
+  }
+
+/* For the form */
+#signup{          
+    background-position: center;  
+    position: relative;
+}
+
+#signup-form{   
+    max-width: 400px;     
+    top: 150px;
+    left:10%;
+}
+
+.text-input:hover{
+    border-color: #070000;
+} 
+
+.join-button:hover{
+    background-color: #fafafa;
+    color: #454b1b;
+}
+
+/* DIY page */
+.example , .example-review{
+    /* width: 100%;    
+    float: left;
+    padding: 5px;     */
+    min-height:150px;    
+    max-height: 200px;  
+    
+    }
+
+
+
+}
+/* end of Media query: tablet and larger(>=768px) */
+
+/* Media query: tablet and larger(>=768px) */
+@media screen and (min-width:992px){
+    /* Hover */
+
+#menu a:hover{
+    border-bottom: 1px solid #3a3a3a;
+    background-color: rgba(60, 60, 60,0.2);
+}    
+
+
+
+/* Drop down to 2 columns for tablet sizes, 50% width */
+
+    .categories-col ,.example , .example-review{
+        width: 50%;
+    }
+
+
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
+    }
+}
+
+/* Large devices (laptops and desktops, 1200px and up) */
+@media screen and (min-width:1200px)  {
+    /* reasons section */
+#benefits{
+    display:flex;
+    flex-direction: row;
+}
+
+#benefits > div{
+    flex: 1;
+}
+#benefits-image{
+    order: 0;
+}
+
+/* #benefits-no{
+    /* order:1; 
+
+} 
+*/
+
+#benefits-no > div {
+    align-self: flex-start;
+}
+
+#benefits-physical > div {
+    align-self: flex-end;
+}
+
+
+.categories-col {
+    width: 25%;
+    float: left;
+    padding: 5px;
+    height: auto;       
+    
+}
+
+
+
+#diy h2,#kitchen h2,#household h2, #other h2{
+    align-self: center;    
+} 
+
+
+/* from blog.css */
+
+#content { 
+    float:left;
+    width:70%;
+    padding:0 0 0 30px; 
+
+    /* border: 2px solid blue; */
+}
+
+#sidebar { 
+    float:right;
+    width:25%;
+    padding:10px;
+    background: darkgray; 
+    /* height:100%; */
+    right: 5px;
+   
+    /* border: 2px solid red; */
+}
+
+p.date { 
+    color: black;
+    
+    font-size: 12px;
+    font-style: italic; 
+}
+
+.left {
+    float:left;
+    margin-right:10px;
+}
+
+/* pagination */
+.pagination { 
+    margin:40px 0; 
+    font-weight:bold;
+}
+
+/* forms */
+label { 
+    float:left;
+    clear:both;
+    color:#333;
+    margin-bottom:4px; 
+}
+input, textarea { 
+    clear:both;
+    float:left;
+    margin:0 0 10px;
+    background:#ededed;
+    border:0;
+    padding:6px 10px;
+    font-size:12px;
+}
+input[type=submit] {
+    font-weight:bold;
+    /* background:#00abff; */
+    background:  #454b1b;
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase; 
+}
+.errorlist { 
+    color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px; 
+}
+
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:#efefef;
+}
+.comment .info {
+    font-weight:bold;
+    font-size: 12px;
+    color:#666;
+}
+
+
+}
