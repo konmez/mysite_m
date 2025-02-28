@@ -33,7 +33,7 @@ The application is deployed on Render: [https://mysite-m.onrender.com](https://m
 
 ## Project Structure
 
-# Short:
+
 
 ```
 mysite_m/
@@ -61,67 +61,7 @@ mysite_m/
 │   
 └── staticfiles/          # Collected static files
 ```
-# Or detailed:
-```
-mysite_m/
-├── account/              # User account management
-│   ├── _pycache_/        # Python bytecode cache
-│   ├── migrations/       # Database migrations
-│   ├── static/           # Static files for account
-│   ├── templates/        # HTML templates
-│   │   ├── account/      # Account-specific templates
-│   │   ├── registration/ # Registration templates
-│   │   └── base_1.html   # Base template for account
-│   ├── __init__.py       # Package initialization
-│   ├── admin.py          # Admin interface configuration
-│   ├── apps.py           # App configuration
-│   ├── authentication.py # Authentication handlers
-│   ├── forms.py          # Form definitions
-│   ├── models.py         # Database models
-│   ├── tests.py          # Test cases
-│   ├── urls.py           # URL routing
-│   └── views.py          # View functions
-├── blog/                 # Main blog application
-│   ├── _pycache_/        # Python bytecode cache
-│   ├── migrations/       # Database migrations
-│   ├── static/blog_static # Static files (CSS, images)
-│   │   ├── css/          # Stylesheets
-│   │   └── images/       # Images
-│   ├── templates/        # HTML templates
-│   │   └── blog/         # Blog-specific templates
-│   │       ├── comment/  # Comment templates
-│   │       ├── post/     # Post templates
-│   │       ├── base.html # Base template
-│   │       ├── home.html # Homepage template
-│   │       └── pagination.html # Pagination component
-│   ├── templatetags/     # Custom template tags
-│   ├── __init__.py       # Package initialization
-│   ├── admin.py          # Admin interface configuration
-│   ├── apps.py           # App configuration
-│   ├── feeds.py          # RSS feed implementation
-│   ├── forms.py          # Form definitions
-│   ├── models.py         # Database models
-│   ├── sitemaps.py       # Sitemap generation
-│   ├── tests.py          # Test cases
-│   ├── urls.py           # URL routing
-│   └── views.py          # View functions
-├── mysite/               # Project settings
-│   ├── _pycache_/        # Python bytecode cache
-│   ├── __init__.py       # Package initialization
-│   ├── .env              # Environment variables
-│   ├── asgi.py           # ASGI configuration
-│   ├── settings.py       # Project settings
-│   ├── urls.py           # Main URL configuration
-│   └── wsgi.py           # WSGI configuration
-├── staticfiles/          # Collected static files
-├── .env                  # Root environment variables
-├── .gitignore            # Git ignore file
-├── db.sqlite3            # SQLite database
-├── manage.py             # Django management script
-├── mysite_data.json      # Data export/backup
-├── README.md             # Project documentation
-└── requirements.txt      # Python dependencies
-```
+
 
 
 
