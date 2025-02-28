@@ -7,9 +7,9 @@
 
 
         <div>
-          You can  comment
-          <a href="{% url 'blog:comment_page'  post.id  %}"    class="click-it" >
-            HERE
+          You can  
+          <a href="{% url 'blog:comment_page'  post.id  %}" class="click-text" >
+            comment here
           </a>          
         </div>
         <br>
@@ -24,7 +24,7 @@
 
 
               {%if comment.email == request.user.email %}
-              You are author of this comment, You can <a href="{% url 'blog:edit_comment' comment.id %}">Edit or Delete</a> it
+              You are author of this comment, You can <a href="{% url 'blog:edit_comment' comment.id %}"  class="click-text">Edit or Delete</a> it
               {% else %}
                   Different email
               {% endif %} 

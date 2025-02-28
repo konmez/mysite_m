@@ -3,6 +3,9 @@ from . import views
 from django.contrib.auth import views as auth_views # type: ignore
 
 
+app_name = 'account'  # Add this line to define the namespace
+
+
 
 urlpatterns = [
     # previous login url

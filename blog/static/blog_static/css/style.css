@@ -8,6 +8,7 @@
     --sidebar-bg: darkgray; /*var(--sidebar-bg); */
     --comment-label: DarkSlateGray:;  /*var(--comment-label);*/
     --name-color: DarkSlateBlue; /*var(--name-color);*/
+    --header-color: Green; /*var(--header-color);*/
   }
 
 
@@ -50,7 +51,7 @@ a{
 }
 
 
-.click-it{
+.click-text{
     border: 2px solid blue;
   
     padding: 3px; 
@@ -192,7 +193,7 @@ main {
 }
  
 #cover-text h1, h2, h3, h4, h5{
-  color: #ffffff;      /*  htext -color */
+  color:var(--header-color);      /*  htext -color */
 }
 
 

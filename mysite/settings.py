@@ -256,4 +256,8 @@ else:
 
 
 
-LOGIN_REDIRECT_URL = '/account/'  # This should match your dashboard URL    
+ 
+LOGIN_REDIRECT_URL = 'account:dashboard'   
+LOGOUT_REDIRECT_URL = 'account:login'
+LOGOUT_URL = 'account:logout'  # or 'dashboard'
+LOGIN_URL = 'account:login'  # or 'account_login' or 'login' or 'account_login`
