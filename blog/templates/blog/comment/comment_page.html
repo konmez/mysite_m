@@ -11,16 +11,16 @@
 
 <div>
   <h1>{{ post.title }}</h1>
-  <p>image:  post.hack_image</p>
-  <img src="{% static post.hack_image  %}"  style="height: 200px;" alt=" Lady filling bucket with pool noodle" >  
+       image:  post.hack_image
+     <img src="{% static post.hack_image  %}"  style="height: 200px;" alt=" Lady filling bucket with pool noodle" >  
   
 </div>
     Published {{ post.publish }} by {{ post.author }}
-  </p>
-  <!-- {{ post.body|linebreaks }} -->
+  
+  
 
   {{ post.body|markdown}}
-  <!--    {{ post.body}} -->
+ 
 
 
 
@@ -38,10 +38,6 @@
     {% empty %}
     There are no similar posts yet.
   {% endfor %}
-
-
-
-
 
   <div>
     {% if request.user.is_authenticated %}
@@ -61,10 +57,11 @@
           <div class="comment">
               <p class="info">
 
-
-              Comment {{ forloop.counter }} by {{ comment.name }}
-              {{ comment.created }}
-              comment email: {{ comment.email }}, 
+                Comment {{ forloop.counter }} by 
+              </p>
+              <p  style="border: 2px solid green;">
+                {{ comment.name|safe }}
+                {{ comment.created }}  comment email: {{ comment.email }}, 
                
               </p>
               {{ comment.body|linebreaks }}
@@ -79,15 +76,6 @@
         {% endfor %}   
 
         <br>
-
-
-
-
-
-
-
-
-
 
         {% include "blog/post/includes/comment_form.html" %} 
 
