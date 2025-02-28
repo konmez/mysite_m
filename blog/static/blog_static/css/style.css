@@ -1,6 +1,6 @@
 /*  <!-- Based on the design by Code Institute, "Love Running", 2024 --> */
 :root {
-    --outline: var(--outline);   /*var(--outline); */
+    --outline: #3a3a3a;   /*var(--outline); */
     --header-bg: #ffffff; /*var(--header-bg); */
     --hover-bg: rgba(60, 60, 60,0.2); /*var(--hover-bg); */
     --main-bg: lightgray; /*var(--main-bg); */
@@ -52,8 +52,7 @@ a{
 
 
 .click-text{
-    border: 2px solid blue;
-  
+    border: 2px solid blue;  
     padding: 3px; 
     margin-left:6px;
  }
@@ -147,9 +146,6 @@ top: 100%;
   
   /* end of header section*/
 
-/* #header{
-    position: fixed; 
-} */
 
 
 /* Main content */
@@ -463,7 +459,7 @@ main {
     /* border: 2px solid red; */
 }
 
-.btn:hover{
+.btn:hover, .btn-simple:hover{
    color:blue;
    border: var(--header-bg);
 }
@@ -478,6 +474,12 @@ main {
 .secondary{
     background-color: yellowgreen;
 }
+
+.btn-simple{
+    padding: 10px; 
+    border: 1px solid blue;
+}
+
 
 .btn{
   color: var(--header-bg);

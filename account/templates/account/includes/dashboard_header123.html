@@ -18,11 +18,11 @@
                     </li>
                 </ul>
             {% endif %}
-            <div class="user"    >
+            <span class="user">
                 {% if request.user.is_authenticated %}
                     Hello, {{ request.user.first_name|default:request.user.username }}
                     <form action="{% url 'account:logout' %}" method="post" >
-                        <button type="submit"  >Log out</button>
+                        <button type="submit" class="btn-simple" >Log out</button>
                         {% csrf_token %}
                     </form>
                     
@@ -30,7 +30,7 @@
                     <a href="{% url 'account:login' %}"    class="click-text" >Log in</a>
                     
                 {% endif %}
-            </div>
+            </span>
 
 
     </div>
