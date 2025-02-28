@@ -10,93 +10,63 @@
 {% block content %}
 
 <div>
-  <h1>{{ post.title }}</h1>
-       image:  post.hack_image
-     <img src="{% static post.hack_image  %}"  style="height: 200px;" alt=" Lady filling bucket with pool noodle" >  
+    <h1>{{ post.title }}</h1>
+        image:  post.hack_image
+      <img src="{% static post.hack_image  %}"  style="height: 200px;" alt=" Lady filling bucket with pool noodle" >  
   
 </div>
     Published {{ post.publish }} by {{ post.author }}
   
   
 
-  {{ post.body|markdown}}
+   {{ post.body|markdown}}
  
 
 
 
-  <p>
-    <a href="{% url 'blog:post_share' post.id %}">
-      Share this post
-    </a>
-  </p>
-
-  <h2>Similar posts</h2>
-  {% for post in similar_posts %}
     <p>
-       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      <a href="{% url 'blog:post_share' post.id %}">
+        Share this post
+      </a>
     </p>
-    {% empty %}
-    There are no similar posts yet.
-  {% endfor %}
 
-  <div>
-    {% if request.user.is_authenticated %}
-       
-        <h3>
-            Hello, {{ request.user.first_name|default:request.user.username }}
-        </h3>   
+    <h2>Similar posts</h2>
+    {% for post in similar_posts %}
+      <p>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </p>
+      {% empty %}
+      There are no similar posts yet.
+    {% endfor %}
+
+    <div>
+      {% if request.user.is_authenticated %}
         
+          <h3>
+              Hello, {{ request.user.first_name|default:request.user.username }}
+          </h3>   
           
-        {% with comments.count as total_comments %}
-        <h3>
-          {{ total_comments }} comment{{ total_comments|pluralize }} in total
-        </h3>
-        {% endwith %}
+            
+          
+          <br>
+
+          {% include "blog/post/includes/list_comments.html"  %}
+
+          
         
-        {% for comment in comments %}
-          <div class="comment">
-              <p class="info">
+          {% include "blog/post/includes/comment_form.html"  %}    
 
-                Comment {{ forloop.counter }} by 
-              </p>
-              <p  style="border: 2px solid green;">
-                {{ comment.name|safe }}
-                {{ comment.created }}  comment email: {{ comment.email }}, 
-               
-              </p>
-              {{ comment.body|linebreaks }}
-              {%if comment.email == request.user.email %}
-              You are author of this comment, You can <a href="{% url 'blog:edit_comment' comment.id %}">Edit or Delete</a> it
-             {% else %}
-             Different email
-             {% endif %}
-          </div>
-          {% empty %}
-          <p>There are no comments.</p>
-        {% endfor %}   
+      {% else %}
+          Please <a href="{% url 'login' %}">Log-in </a> to comment
+      {% endif %}
 
-        <br>
 
-        {% include "blog/post/includes/comment_form.html" %} 
-
-    {% else %}
-        Please <a href="{% url 'login' %}">Log-in </a> to comment
-    {% endif %}
+   
 
 
 
-  
+    
     </div>
 
-
-
-
- 
-  
-  
-  
-  
-  
-  
 
 {% endblock %}

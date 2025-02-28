@@ -49,6 +49,14 @@ a{
     text-decoration: none;
 }
 
+
+.click-it{
+    border: 2px solid blue;
+  
+    padding: 3px; 
+    margin-left:6px;
+ }
+
 /* Header */
 header {
     background-color: var(--header-bg);
@@ -309,12 +317,12 @@ main {
     font-weight:bold;
     font-size: 12px;
     color: var(--comment-label);
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .name-color {
     color: var(--name-color)  !important;;
-    border: 2px solid green;
+   
 }
 
 

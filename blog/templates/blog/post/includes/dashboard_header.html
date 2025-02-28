@@ -21,12 +21,11 @@
             <span class="user">
                 {% if request.user.is_authenticated %}
                     Hello, {{ request.user.first_name|default:request.user.username }}
-                    <form action="{% url 'logout' %}" method="post">
-                      <button type="submit" style="border: 2px solid blue; padding: 3px; margin-left:6px;">   <h5>Logout</h5></button>
-                     {% csrf_token %}
-                    </form>
+                    <a href="{% url 'logout' %}"    class="click-it" >Log out</a>
+                    
                 {% else %}
-                    <a href="{% url 'login' %}">Log-in</a>
+                    <a href="{% url 'login' %}"    class="click-it" >Log in</a>
+                    
                 {% endif %}
             </span>
 

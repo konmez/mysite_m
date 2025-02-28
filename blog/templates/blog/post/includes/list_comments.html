@@ -1,0 +1,36 @@
+
+        {% with comments.count as total_comments %}
+        <h2>
+          {{ total_comments }} comment{{ total_comments|pluralize }}
+        </h2>
+        {% endwith %}
+
+
+        <div>
+          You can  comment
+          <a href="{% url 'blog:comment_page'  post.id  %}"    class="click-it" >
+            HERE
+          </a>          
+        </div>
+        <br>
+        
+        {% for comment in comments %}
+          <div class="comment">
+              <p class="info">
+                Comment {{ forloop.counter }} by <span class="name-color">{{ comment.name|safe }} </span>
+                {{ comment.created }}
+              </p>
+              {{ comment.body|linebreaks }}
+
+
+              {%if comment.email == request.user.email %}
+              You are author of this comment, You can <a href="{% url 'blog:edit_comment' comment.id %}">Edit or Delete</a> it
+              {% else %}
+                  Different email
+              {% endif %} 
+           </div>
+
+
+          {% empty %}
+          <p>There are no comments.</p>
+        {% endfor %}
