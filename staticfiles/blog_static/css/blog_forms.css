@@ -1,0 +1,91 @@
+/* forms */
+
+/* share form: */
+label { 
+    float:left;
+    clear:both;
+    color: var(--text-color);
+    margin-bottom:4px; 
+}
+
+input, textarea { 
+    clear:both;
+    float:left;
+    margin:0 0 10px;
+    background:var(--header-bg);
+    border:0;
+    padding:6px 10px;
+    font-size:15px;
+}
+
+
+input[type=submit]:hover {
+    color:var(--btn-color1);
+    background:var(--header-bg);
+}
+
+
+input[type=submit] {
+    font-weight:bold;
+    background:var(--btn-color-pr);
+    color:var(--header-bg);
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase; 
+}
+.errorlist { 
+    color: var(--error-color);
+    float:left;
+    clear:both;
+    padding-left:10px; 
+}
+
+
+.btn:hover, .btn-simple:hover{
+    color: var(--border-color);
+    border: var(--header-bg);
+ }
+ 
+ .btn-primary{
+    background-color:  var(--btn-color-pr);
+ }
+ 
+ .btn-danger{
+     background-color: var(--btn-color-dng);
+ }
+ .btn-secondary{
+     background-color: var(--btn-color-scnd);
+ }
+ 
+ 
+ 
+ .btn{
+   color: var(--header-bg);;
+   font-size: 100%;
+   padding: 10px 20px;
+   border-radius: 4px;
+   margin: 0;
+   height: auto;
+   border: 2px solid var(--border-color);
+   cursor: pointer;
+
+
+
+ }
+ 
+ .button-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    clear: both;
+}
+ 
+
+.comment-edit-form {
+    padding: 15px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+}

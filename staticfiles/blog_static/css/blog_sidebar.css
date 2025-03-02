@@ -1,0 +1,14 @@
+#sidebar { 
+    float:right;
+    /* width:25%; */
+    padding:10px;
+    background: var(--sidebar-bg);   
+    margin: 0 20px 0 0;   
+    /* border: 2px solid red;  */    
+    height:100%;
+}
+
+
+.pad-10 {
+    padding: 10px;
+}

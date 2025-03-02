@@ -1,135 +1,8 @@
-/*  <!-- Based on the design by Code Institute, "Love Running", 2024 --> */
-
-/* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
-/* Asterisk wildcard selector to override default styles added by the browser */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-/* General styles */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* Generic project styles */
-    color: #3a3a3a;
-    font-family: 'Lato', sans-serif;
-}
-
-h1,h2,h3,h4,h5 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
-    
- 
-} 
-
-.hidden-heading{
-    display: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-/* Header */
-header {
-    background-color: #ffffff;
-    padding: 0 1rem;
-    position: fixed; 
-    z-index: 99; 
-    width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;   
-    
-    
-}
-
-header a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-
-#menu {
-    font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-#menu > li {
-    margin-bottom: 1em;
-}
-
-#menu a:hover{
-    border-bottom: 1px solid #3a3a3a;
-    background-color: rgba(60, 60, 60,0.2);
-}  
-
-#cat-menu > li {
-    margin-bottom: 1em;
-}
-
-#cat-menu {font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-.active {
-    border-bottom: 1px solid #3a3a3a;
-}
-
-/* nav bar styles with toggle on/off */
-nav{
-position: absolute;
-background-color: #ffffff;
-width: 100%;
-box-shadow: 0 2px 2px #3a3a3a;
-padding: 0 1rem;
-left: 0%;
-display: none;
-top: 100%;
-}
-
-/* nav toggle */
-#nav-toggled:checked~nav{
-  display: block;
-}
-
-#nav-toggled{
-    display: none;
-}
-
-.nav-toggled-label{
-    font-size: 2rem;
-}
-
-/* cat toggle */
-#cat-toggled:checked~#cat-menu {
-    display: block;
-  }
- #cat-toggled{
-    display: none;
- }
-  
-  #cat-menu{
-      display: none;
-      }
-  
-  /* end of header section*/
 
 
 /* Main content */
 main {
-    background-color:  rgba(60, 60, 60,0.2);
+    background-color:  var(--main-bg);
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;    
     margin-top: 50px;    
@@ -168,12 +41,17 @@ main {
 }
  
 #cover-text h1, h2, h3, h4, h5{
- color: #ffffff;
+  color: var(--main-bg);      /*  htext -color */
 }
+
+
 /* reasons section */
+
+
+
 #reasons, #categories{
     margin: 20px auto;
-    width: 90%;
+    width: 98%;
 }    
 
 #reasons h2 {
@@ -187,7 +65,7 @@ main {
 }
 
 .hr-line{
-    border-top: 1px solid #3a3a3a;
+    border-top: 1px solid var(--outline);
     margin: 5px 0;
 }
 
@@ -205,27 +83,37 @@ main {
     height: 90vh;
     width: 90vh;
     margin: 20px 20px;
+    
     background: url(../images/kitten_smaller.jpg) no-repeat center  center/cover;    
     border-radius: 20%;
     max-width: 350px;
     max-height: 350px;
    }
 
-#benefits-image{
+
+#benefits-image {
     display: flex;
     align-items: center;
     justify-content: center;
-}   
-
-  
-
-#benefits-yes, 
-#benefits-no {
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
 }
 
+ 
+
+
+#benefits-yes, #benefits-no {
+    /* flex: 1;
+    min-width: 300px;
+    max-width: 500px; */
+
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+
+.light-text{
+    color: var(--header-bg);
+}
 
 /* DIY page */
 
@@ -269,17 +157,36 @@ main {
     }
 
 
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:var(--header-bg);
+}
+.comment .info {
+    font-weight:bold;
+    font-size: 12px;
+    color: var(--comment-label);
+    /* border: 1px solid red; */
+}
+
+.name-color {
+    color: var(--name-color)  !important;;
+   
+}
+
 
 
 /* Sign up form*/
 #signup-form h2{
-  color: #fafafa;
+  color: var(--header-bg);
   margin: 30px 30px 20px 30px; 
 }
 
 #signup-form{
-    background-color: rgba(60, 60, 60,0.6);
-    color: #ffffff;
+    background-color: rgba(60, 60, 60,0.2);
+    color: var(--header-bg);
     padding: 30px;  
     display: flex;
     flex-direction: column;
@@ -299,7 +206,7 @@ main {
 
 .text-input {
     color: #454b1b;
-    border: 1px solid #fafafa;
+    border: 1px solid var(--header-bg);
     border-radius: 2px;
     width: 100%;   
     padding: 0 5px;
@@ -308,12 +215,12 @@ main {
 
     font-family: 'Oswald', sans-serif;   
     letter-spacing: 2px;
-    color: #252525;
+    color: var(--text-color);
 }
 
 .msg-input{
     color: #454b1b;
-    border: 1px solid #fafafa;
+    border: 1px solid var(--header-bg);
     border-radius: 2px;
     width: 100%;   
     padding: 0 5px;    
@@ -322,12 +229,12 @@ main {
 
     font-family: 'Oswald', sans-serif;   
     letter-spacing: 2px;
-    color: #252525;
+    color: var(--text-color);
 }
 
 .join-button{
   background-color: #454b1b;
-  color: #fafafa;
+  color: var(--header-bg);
   font-size: 100%;
   padding: 15px 32px;
   border-radius: 2px;
@@ -381,23 +288,73 @@ main {
 
 
 .click-it :hover{
-    background-color:  rgba(60, 60, 60,0.4);
+    background-color:  rgba(60, 60, 60,0.2);
 }
 
-    .construction {
-        height: 90vh;
-        width: 90vh;
-        margin: 20px 20px;
-        background: url(../images/under-construction-2891888_1920.jpg) no-repeat center center/cover;    
-        border-radius: 5%;
-        max-width: 350px;
-        max-height: 350px;
-        
-       }
+.construction {
+    height: 90vh;
+    width: 90vh;
+    margin: 20px 20px;
+    background: url(../images/under-construction-2891888_1920.jpg) no-repeat center center/cover;    
+    border-radius: 5%;
+    max-width: 350px;
+    max-height: 350px;
+    
+    }
+
+
+
+
+.form-actions{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 20px;
+    /* border: 2px solid red; */
+}
+
+.btn:hover, .btn-simple:hover{
+   color:blue;
+   border: var(--header-bg);
+}
+
+.primary{
+    background-color:  green;
+}
+
+.danger{
+    background-color: #ff0000;
+}
+.secondary{
+    background-color: yellowgreen;
+}
+
+.btn-simple{
+    padding: 10px; 
+    border: 1px solid blue;
+}
+
+
+.btn{
+  color: var(--header-bg);
+  font-size: 100%;
+  padding: 15px 32px;
+  border-radius: 2px;
+  margin: 20px 5px 5px;
+  height: 50px;
+  /* padding: 10px; */
+
+  border: 1px solid blue;
+}
+
+
+
+
+
 
 /* Footer */
 footer {
-    background-color: #ffffff;
+    background-color: var(--header-bg);
 }
 
 #social-networks {
@@ -411,7 +368,7 @@ list-style-type: none;
 #social-networks i {
      font-size: 160%;
      padding: 5%;
-     color:  #3a3a3a;
+     color:  var(--outline);
 }
 /* end of footer */
 
@@ -422,6 +379,10 @@ list-style-type: none;
 }
 
 /* Media query: tablet and larger(>=768px) */
+
+
+/* comments */
+
 @media screen and (min-width:768px){
     /* Header */
     
@@ -485,6 +446,10 @@ main{
     align-self: flex-end;
   }
 
+
+
+  
+
 /* For the form */
 #signup{          
     background-position: center;  
@@ -502,7 +467,7 @@ main{
 } 
 
 .join-button:hover{
-    background-color: #fafafa;
+    background-color: var(--header-bg);
     color: #454b1b;
 }
 
@@ -517,7 +482,6 @@ main{
     }
 
 
-
 }
 /* end of Media query: tablet and larger(>=768px) */
 
@@ -526,8 +490,8 @@ main{
     /* Hover */
 
 #menu a:hover{
-    border-bottom: 1px solid #3a3a3a;
-    background-color: rgba(60, 60, 60,0.2);
+    border-bottom: 1px solid var(--outline);
+    background-color: var(--hover-bg);
 }    
 
 
@@ -541,12 +505,8 @@ main{
 
 }
 
-/* Large devices (laptops and desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    #menu a:hover{
-        border-bottom: 1px solid #3a3a3a;
-    }
-}
+
+
 
 /* Large devices (laptops and desktops, 1200px and up) */
 @media screen and (min-width:1200px)  {
@@ -563,17 +523,17 @@ main{
     order: 0;
 }
 
-/* #benefits-no{
-    /* order:1; 
+#benefits-no{
+    order:1; 
 
-} 
-*/
+}  
+
 
 #benefits-no > div {
     align-self: flex-start;
 }
 
-#benefits-physical > div {
+#benefits-yes > div {
     align-self: flex-end;
 }
 
@@ -595,7 +555,7 @@ main{
 
 /* from blog.css */
 
-#content { 
+.content { 
     float:left;
     width:70%;
     padding:0 0 0 30px; 
@@ -607,7 +567,7 @@ main{
     float:right;
     width:25%;
     padding:10px;
-    background: darkgray; 
+    background: var(--sidebar-bg); 
     /* height:100%; */
     right: 5px;
    
@@ -643,7 +603,7 @@ input, textarea {
     clear:both;
     float:left;
     margin:0 0 10px;
-    background:#ededed;
+    background:var(--text-color);
     border:0;
     padding:6px 10px;
     font-size:12px;
@@ -652,7 +612,7 @@ input[type=submit] {
     font-weight:bold;
     /* background:#00abff; */
     background:  #454b1b;
-    color:#fff;
+    color:var(--header-bg);
     padding:10px 20px;
     font-size:14px;
     text-transform:uppercase; 
@@ -662,19 +622,6 @@ input[type=submit] {
     float:left;
     clear:both;
     padding-left:10px; 
-}
-
-/* comments */
-.comment {
-    padding:10px;
-}
-.comment:nth-child(even) {
-    background:#efefef;
-}
-.comment .info {
-    font-weight:bold;
-    font-size: 12px;
-    color:#666;
 }
 
 

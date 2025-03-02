@@ -1,0 +1,282 @@
+/* hero section */
+
+/* Hero image */
+#cover-text {
+    width: 300px;
+    right: 50px;
+}
+  
+
+#hero {
+    height: 600px;
+    width: 100%;
+    background: url(../images/StartBG.jpg) no-repeat center  center/cover;    
+    position: relative;
+}
+
+#cover-text{
+  background-color:  rgba(60, 60, 60,0.6);
+  font-size: 130%;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 80%;
+  min-height: 200px;
+  padding-left: 10px;
+  padding-top: 40px;
+}
+ 
+#cover-text:is( h1, h2, h3, h4, h5){
+  color: var(--main-bg);      /*  htext -color */
+}
+
+
+/* reasons section */
+
+
+
+#reasons, #categories{
+    margin: 20px auto;
+    width: 98%;
+}    
+
+#reasons h2 {
+    font-size: 280%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#reasons div{
+    padding: 0.5rem 0;
+}
+
+.hr-line{
+    border-top: 1px solid var(--outline);
+    margin: 5px 0;
+}
+
+
+#benefits-no > div , #benefits-yes > div {
+    line-height: 20px;   
+    margin-bottom: 20px;
+}
+
+#benefits-no p , #benefits-yes p{
+    padding: 0 20px;
+    }
+
+#circle-cover-bg {
+    height: 90vh;
+    width: 90vh;
+    margin: 20px 20px;
+    
+    background: url(../images/kitten_smaller.jpg) no-repeat center  center/cover;    
+    border-radius: 20%;
+    max-width: 350px;
+    max-height: 350px;
+   }
+
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ 
+
+
+#benefits-yes, #benefits-no {
+    /* flex: 1;
+    min-width: 300px;
+    max-width: 500px; */
+
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+
+.light-text{
+    color: var(--header-bg);
+}
+
+
+
+
+
+/* category buttons */
+#diy{     
+    background: url(../images/diy_sam-clarke_unsplash_smaller.jpg) no-repeat center  center/cover;  
+      
+   }
+#kitchen{
+   background: url(../images/kitchen_viswaprem-anbarasapandian_unsplash\ _smaller.jpg) no-repeat center  center/cover;
+
+}    
+#household{
+   background: url(../images/household_emmanuel-ikwuegbu-FXpJW_wdMdk-unsplash\ -_smaller.jpg) no-repeat center  center/cover;   
+}
+#other{
+   background: url(../images/other_samantha-gades-LA6XfeVI5_c-unsplash_smaller.jpg) no-repeat center  center/cover;  
+}
+
+
+
+.unit-box{       
+       height: 100%;
+       width: 100%;        
+       display: flex;
+       text-align: center;
+       justify-content: center;         
+    }
+    
+.unit-box h2{
+        align-self: center;  
+    }
+    
+
+.row{
+   display: flex;  
+   flex-wrap: wrap;    
+}
+
+.categories-col, .example, .example-review{
+   width: 100%;    
+   /* float: left; */
+   padding: 5px;    
+   min-height:150px;    
+   max-height: 200px;
+   
+   }
+
+
+.click-it :hover{
+   background-color:  rgba(60, 60, 60,0.2);
+}
+
+
+
+
+
+@media screen and (min-width:768px){
+    /* Header */
+    
+nav{
+    display: block;
+    position: relative;
+    width: fit-content;
+    box-shadow: none;
+    padding-bottom: 1rem;
+}
+
+#menu{
+    display: flex;
+}
+
+#menu>li{
+    padding-left: 1rem;
+}
+
+.nav-toggled-label{
+    display: none;
+}
+
+#logo{
+    font-size: 200%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+}
+
+/* main content */
+main{
+     /* Push main content down to accommodate larger header */
+    margin-top: 79px;
+    padding-top: 0.8rem;
+}
+
+
+
+
+/* Hero image */
+#cover-text {
+    width: 300px;
+    right: 50px;
+}
+  
+/* reasons section */
+#benefits-yes, 
+#benefits-no{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#benefits-yes > div, 
+#benefits-no > div {
+   width: 75%;  
+}
+
+#benefits-no>div{
+    text-align: end;
+    align-self: flex-end;
+  }
+ 
+ /* Drop down to 2 columns for tablet sizes, 50% width */
+
+ .categories-col ,.example , .example-review{
+    width: 50%;
+} 
+
+
+
+}
+
+
+
+
+/* Large devices (laptops and desktops, 1200px and up) */
+@media screen and (min-width:1200px)  {
+
+
+
+    
+    /* reasons section */
+#benefits{
+    display:flex;
+    flex-direction: row;
+}
+
+#benefits > div{
+    flex: 1;
+}
+#benefits-image{
+    order: 0;
+}
+
+#benefits-no{
+    order:1; 
+
+}  
+
+
+#benefits-no > div {
+    align-self: flex-start;
+}
+
+#benefits-yes > div {
+    align-self: flex-end;
+}
+
+
+.categories-col {
+    width: 25%;
+    float: left;
+    padding: 5px;
+    height: auto;       
+    
+}
+
+
+
+}
