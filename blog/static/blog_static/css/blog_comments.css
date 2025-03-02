@@ -1,0 +1,39 @@
+
+/* for all comments related html in blog app */
+.date { 
+    
+    font-size: 12px;
+    font-style: italic; 
+}
+
+
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:var(--header-bg);
+}
+.comment .info {
+    font-weight:bold;
+    font-size: 12px;
+    color: var(--comment-label);
+    /* border: 1px solid red; */
+}
+
+.name-color {
+    color: var(--name-color)  ;   
+}
+
+.color-black {
+    color: var(--text-color);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.left {
+    float:left;
+    margin-right:10px;
+}

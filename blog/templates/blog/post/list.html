@@ -26,8 +26,7 @@
     <hr class="hr-line">  
     <div class="row">
               <!-- example  1 -->
-                    <div class="example" >
-                        
+                    <div class="example" >                        
                             <div  class="unit-box-diy">
                               
                               <img src="{% static post.hack_image  %}" alt=" Lady filling bucket with pool noodle" >  
@@ -55,13 +54,15 @@
 
 
     <!-- <p class="tags">Tags:  -->
-      <p>Tags:
-      {% for tag in post.tags.all %}
-        <a href="{% url 'blog:post_list_by_tag' tag.slug  %}">
-          {{ tag.name }}
-        </a>
-        {% if not forloop.last %}, {% endif %}
-      {% endfor %}
+    <p>Tags:
+        {% for tag in post.tags.all %}
+          <a href="{% url 'blog:post_list_by_tag' tag.slug  %}">
+            {{ tag.name }}
+          </a>
+          {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    
     <p class="date">
       Published {{ post.publish }} by {{ post.author }}
     </p>

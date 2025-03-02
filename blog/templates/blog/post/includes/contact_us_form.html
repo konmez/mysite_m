@@ -14,30 +14,12 @@
     
             <form id="signup-form" action="{% url 'blog:contact_us'  %}" method="POST">
                 
-            <div class="my-form">
+                <div class="my-form">
                         <h2><i class="fa-solid fa-envelope"></i> Let's hear from you!  </h2>   
-                        {{ form.as_p }}
-
-                        <!-- <label for="first_name">First Name:</label>
-                        <p id="first-field">
-                        {{ form.first_name }}
-                        </p>
-                        
-                        <label for="last_name">Last Name:</label>
-                        {{ form.last_name }}
-
-                        
-                        <label for="email">Email:</label>
-                        {{ form.email }}
-
-                        <label for="message">Message:</label>
-                        {{ form.message }} -->
-                        
+                        {{ form.as_p }}                                             
                         {% csrf_token %}
-
-
                 </div>
-                <button type="submit"  class="join-button">Send it!</button>
+                        <input type="submit"    value="Send e-mail"  >
             </form>
 
     

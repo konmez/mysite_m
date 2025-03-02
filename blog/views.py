@@ -16,6 +16,8 @@ from django.contrib.postgres.search import TrigramSimilarity # type: ignore
 
 from django.contrib import messages # type: ignore
 
+from django.http import HttpResponseForbidden, HttpResponseRedirect # type: ignore
+
 
 def home_page(request):
     return render(
@@ -307,34 +309,39 @@ def comment_page(request, post_id):
 def edit_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     
+    
+
     if request.method == 'POST':
 
         print("POST data:", request.POST)
 
         # Check if the delete button was clicked
-        if 'delete_comment' in request.POST:
+        if 'delete' in request.POST:
             post = comment.post  # Save post before deleting comment
             comment.delete()
             messages.success(request, 'Comment deleted successfully')
             return redirect('blog:post_detail', year=post.publish.year,
                           month=post.publish.month, day=post.publish.day,
                           post=post.slug)
-
+        
+        elif 'cancel' in request.POST:
+            return HttpResponseRedirect(request.path_info)     
 
         
-
-        form = CommentEditForm(request.POST, instance=comment)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Comment updated successfully')
-            return redirect('blog:post_detail', year=comment.post.publish.year,
-                            month=comment.post.publish.month, day=comment.post.publish.day,
-                            post=comment.post.slug)
+        else:
+            form = CommentEditForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Comment updated successfully')
+                return redirect('blog:post_detail', year=comment.post.publish.year,
+                                month=comment.post.publish.month, day=comment.post.publish.day,
+                                post=comment.post.slug)
     else:
         form = CommentEditForm(instance=comment)
     
     return render(request, 'blog/comment/comment_edit.html', {
         'comment': comment,
         'form': form,
+       
     })
         

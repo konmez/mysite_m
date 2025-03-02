@@ -11,18 +11,19 @@
 
       <div>
         <h1>{{ post.title }}</h1>
-        <img src="{% static post.hack_image  %}"  style="height: 200px;" alt=" Lady filling bucket with pool noodle" >  
+        <img src="{% static post.hack_image  %}" class="height-200" alt=" Lady filling bucket with pool noodle" >  
         
       </div>
-          Published {{ post.publish }} by {{ post.author }}
+        <span class="date color-black bold">  Published {{ post.publish }}  by </span> 
+        <span class="name-color bold">{{ post.author }}</span>
         
         <!-- {{ post.body|linebreaks }} -->
 
         {{ post.body|markdown}}
         <!--    {{ post.body}} -->
 
-        <p>
-          <a href="{% url 'blog:post_share' post.id %}">
+        <p  >
+          <a href="{% url 'blog:post_share' post.id %}"  class="click-text">
             Share this post
           </a>
         </p>

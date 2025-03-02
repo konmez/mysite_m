@@ -1,0 +1,275 @@
+/*  <!-- Based on the design by Code Institute, "Love Running", 2024 --> */
+:root {
+    --outline: #3a3a3a;   /*var(--outline); */
+    --header-bg: #ffffff; /*var(--header-bg); */
+    --hover-bg: rgba(60, 60, 60,0.2); /*var(--hover-bg); */
+    --main-bg: lightgray; /*var(--main-bg); */
+    --text-color: #252525; /*var(--text-color); */
+    --sidebar-bg: darkgray; /*var(--sidebar-bg); */
+    --comment-label: DarkSlateGray:;  /*var(--comment-label);*/
+    --name-color: darkred; /*var(--name-color);*/
+    --header-color: Green; /*var(--header-color);*/
+    --border-color: blue; /*var(--border-color);*/
+    --bg-dashboard: darkmagenta;   /*var(--bg-dashboard); */
+    --header-text: #ffffff; /*var(--header-text); */
+    --h-text: #f3f7cc; /*var(--h-text); */
+    --error-color: red; /*var(--error-color); */
+    --btn-color1: #454b1b; /*var(--btn-color1); */
+    --btn-color-pr: green; /*var(--btn-color-pr); */
+    --btn-color-dng: red; /*var(--btn-color-dng); */
+    --btn-color-scnd: yellowgreen; /*var(--btn-color-scnd); */
+    
+  }
+
+
+
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Generic project styles */
+    color: var(--outline);
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    
+ 
+} 
+
+.hidden-heading{
+    display: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: var(--border-color);
+}
+
+a{
+    text-decoration: none;
+    color: var(--bg-dashboard);
+}
+
+
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    padding: 0 1rem;
+    position: fixed; 
+    z-index: 99; 
+    width: 100%;
+    box-shadow: 0 2px 2px var(--outline);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;   
+    
+    
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin-bottom: 1em;
+}
+
+#menu a:hover{
+    border-bottom: 1px solid var(--outline);
+    background-color: var(--hover-bg);
+}  
+
+#cat-menu > li {
+    margin-bottom: 1em;
+}
+
+#cat-menu {font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+.active {
+    border-bottom: 1px solid var(--outline);
+}
+
+/* nav bar styles with toggle on/off */
+nav{
+position: absolute;
+background-color: var(--header-bg);
+width: 100%;
+box-shadow: 0 2px 2px var(--outline);
+padding: 0 1rem;
+left: 0%;
+display: none;
+top: 100%;
+}
+
+/* nav toggle */
+#nav-toggled:checked~nav{
+  display: block;
+}
+
+#nav-toggled{
+    display: none;
+}
+
+.nav-toggled-label{
+    font-size: 2rem;
+}
+
+/* cat toggle */
+#cat-toggled:checked~#cat-menu {
+    display: block;
+  }
+ #cat-toggled{
+    display: none;
+ }
+  
+  #cat-menu{
+      display: none;
+      }
+  
+  /* end of header section*/
+
+
+
+ 
+/* Main content */
+main {
+    background-color:  var(--main-bg);
+    /* Make main element take up any surplus space to push footer down */
+    flex: 1 0 auto;    
+    margin-top: 50px;    
+    /* Enable flex properties for the child elements */
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ 
+.content { 
+    float:left;
+    width:70%;
+    padding:0 0 0 30px; 
+     /* border: 2px solid blue;  */
+
+     /* display: flex; */
+}
+
+p {
+    line-height: 1.8;
+}
+
+
+.click-text:hover {
+    border: none;
+    color: var(--border-color);
+}
+
+.click-text {
+   border: 1px solid var(--border-color);
+   border-radius: 4px;
+   padding: 5px;
+   /* border-radius: 3px; */
+}
+
+
+  /* Footer */
+footer {
+    background-color: var(--header-bg);
+}
+
+#social-networks {
+display: flex;
+text-align: center;
+justify-content: space-evenly;
+padding: 20px 5px;
+list-style-type: none;
+}
+
+#social-networks i {
+     font-size: 160%;
+     padding: 5%;
+     color:  var(--outline);
+}
+/* end of footer */
+
+
+@media screen and (min-width:768px){
+    /* Header */
+
+ /* Hover */
+
+ #menu a:hover{
+    border-bottom: 1px solid var(--outline);
+    background-color: var(--hover-bg);
+}    
+
+
+    
+nav{
+    display: block;
+    position: relative;
+    width: fit-content;
+    box-shadow: none;
+    padding-bottom: 1rem;
+}
+
+#menu{
+    display: flex;
+}
+
+#menu>li{
+    padding-left: 1rem;
+}
+
+.nav-toggled-label{
+    display: none;
+}
+
+#logo{
+    font-size: 200%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+}
+
+/* main content */
+main{
+     /* Push main content down to accommodate larger header */
+    margin-top: 79px;
+    padding-top: 0.8rem;
+}
+}
+

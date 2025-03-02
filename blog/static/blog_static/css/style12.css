@@ -1,151 +1,3 @@
-/*  <!-- Based on the design by Code Institute, "Love Running", 2024 --> */
-:root {
-    --outline: #3a3a3a;   /*var(--outline); */
-    --header-bg: #ffffff; /*var(--header-bg); */
-    --hover-bg: rgba(60, 60, 60,0.2); /*var(--hover-bg); */
-    --main-bg: lightgray; /*var(--main-bg); */
-    --text-color: #252525; /*var(--text-color); */
-    --sidebar-bg: darkgray; /*var(--sidebar-bg); */
-    --comment-label: DarkSlateGray:;  /*var(--comment-label);*/
-    --name-color: DarkSlateBlue; /*var(--name-color);*/
-    --header-color: Green; /*var(--header-color);*/
-  }
-
-
-
-/* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
-/* Asterisk wildcard selector to override default styles added by the browser */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-/* General styles */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* Generic project styles */
-    color: var(--outline);
-    font-family: 'Lato', sans-serif;
-}
-
-h1,h2,h3,h4,h5 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-color);
-    
- 
-} 
-
-.hidden-heading{
-    display: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-
-.click-text{
-    border: 2px solid blue;  
-    padding: 3px; 
-    margin-left:6px;
- }
-
-/* Header */
-header {
-    background-color: var(--header-bg);
-    padding: 0 1rem;
-    position: fixed; 
-    z-index: 99; 
-    width: 100%;
-    box-shadow: 0 2px 2px var(--outline);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;   
-    
-    
-}
-
-header a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-
-#menu {
-    font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-#menu > li {
-    margin-bottom: 1em;
-}
-
-#menu a:hover{
-    border-bottom: 1px solid var(--outline);
-    background-color: var(--hover-bg);
-}  
-
-#cat-menu > li {
-    margin-bottom: 1em;
-}
-
-#cat-menu {font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-.active {
-    border-bottom: 1px solid var(--outline);
-}
-
-/* nav bar styles with toggle on/off */
-nav{
-position: absolute;
-background-color: var(--header-bg);
-width: 100%;
-box-shadow: 0 2px 2px var(--outline);
-padding: 0 1rem;
-left: 0%;
-display: none;
-top: 100%;
-}
-
-/* nav toggle */
-#nav-toggled:checked~nav{
-  display: block;
-}
-
-#nav-toggled{
-    display: none;
-}
-
-.nav-toggled-label{
-    font-size: 2rem;
-}
-
-/* cat toggle */
-#cat-toggled:checked~#cat-menu {
-    display: block;
-  }
- #cat-toggled{
-    display: none;
- }
-  
-  #cat-menu{
-      display: none;
-      }
-  
-  /* end of header section*/
-
 
 
 /* Main content */
@@ -189,7 +41,7 @@ main {
 }
  
 #cover-text h1, h2, h3, h4, h5{
-  color:var(--header-color);      /*  htext -color */
+  color: var(--main-bg);      /*  htext -color */
 }
 
 
@@ -259,7 +111,9 @@ main {
 }
 
 
-
+.light-text{
+    color: var(--header-bg);
+}
 
 /* DIY page */
 
@@ -651,12 +505,8 @@ main{
 
 }
 
-/* Large devices (laptops and desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    #menu a:hover{
-        border-bottom: 1px solid var(--outline);
-    }
-}
+
+
 
 /* Large devices (laptops and desktops, 1200px and up) */
 @media screen and (min-width:1200px)  {
