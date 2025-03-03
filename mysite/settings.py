@@ -261,3 +261,9 @@ LOGIN_REDIRECT_URL = 'account:dashboard'
 LOGOUT_REDIRECT_URL = 'account:login'
 LOGOUT_URL = 'account:logout'  # or 'dashboard'
 LOGIN_URL = 'account:login'  # or 'account_login' or 'login' or 'account_login`
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
