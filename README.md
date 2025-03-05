@@ -1,6 +1,6 @@
 # MySite Blog
 
-A Django-powered blog application with tagging, comments, and RSS feed capabilities.
+A Django-powered blog application with tagging, comments, user management, RSS feed capabilities.
 
 ## Live Demo
 
