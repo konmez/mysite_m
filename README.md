@@ -4,7 +4,7 @@ A Django-powered blog application with tagging, comments, user management, RSS f
 
 ## Live Demo
 
-The application is deployed on Render: [https://mysite-m.onrender.com](https://mysite-m.onrender.com/blog/home.html)
+The application is deployed on Render: [https://mysite-m.onrender.com](https://mysite-m.onrender.com)
 
 ## Features
 
